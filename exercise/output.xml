@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.11.1 on darwin)" generated="20230106 14:12:11.876" rpa="false" schemaversion="3">
+<suite id="s1" name="Register" source="/Users/vira/Documents/automation_warpin/sehatq_vira/Tests/register.robot">
+<test id="s1-t1" name="User want to register new account in sehatQ website" line="11">
+<kw name="Given User Open SehatQ Register Page" library="register">
+<doc>Open chrome browser</doc>
+<kw name="Evaluate" library="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230106 14:12:11.988" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x105cc9310&gt;</msg>
+<status status="PASS" starttime="20230106 14:12:11.988" endtime="20230106 14:12:11.989"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20230106 14:12:11.989" endtime="20230106 14:12:11.989"/>
+</kw>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${url_daftar}</arg>
+<arg>chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230106 14:12:11.989" level="INFO">Opening browser 'chrome' to base url 'https://account.sehatq.com/daftar/email'.</msg>
+<status status="PASS" starttime="20230106 14:12:11.989" endtime="20230106 14:12:40.498"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230106 14:12:40.506" endtime="20230106 14:12:40.692"/>
+</kw>
+<status status="PASS" starttime="20230106 14:12:11.987" endtime="20230106 14:12:40.692"/>
+</kw>
+<kw name="When User click nama lengkap" library="register">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${nama_field}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230106 14:12:40.699" level="INFO">Clicking element '//span[normalize-space()='Nama Lengkap']'.</msg>
+<status status="PASS" starttime="20230106 14:12:40.694" endtime="20230106 14:12:42.419"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${nama_lengkap_txt}</arg>
+<arg>vira hidayat</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230106 14:12:42.421" level="INFO">Typing text 'vira hidayat' into text field '//input[@id="name"]'.</msg>
+<status status="PASS" starttime="20230106 14:12:42.420" endtime="20230106 14:12:45.886"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230106 14:12:48.890" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230106 14:12:45.887" endtime="20230106 14:12:48.893"/>
+</kw>
+<status status="PASS" starttime="20230106 14:12:40.694" endtime="20230106 14:12:48.896"/>
+</kw>
+<kw name="And User input the valid email address" library="register">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${email_field}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230106 14:12:48.901" level="INFO">Clicking element '//span[normalize-space()='Email']'.</msg>
+<status status="PASS" starttime="20230106 14:12:48.899" endtime="20230106 14:12:49.510"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${email_txt}</arg>
+<arg>virahidayatt@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230106 14:12:49.510" level="INFO">Typing text 'virahidayatt@gmail.com' into text field '//input[@id="email"]'.</msg>
+<status status="PASS" starttime="20230106 14:12:49.510" endtime="20230106 14:12:51.232"/>
+</kw>
+<status status="PASS" starttime="20230106 14:12:48.898" endtime="20230106 14:12:51.233"/>
+</kw>
+<kw name="And User input password using min 6 characters" library="register">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${password_field}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230106 14:12:51.236" level="INFO">Clicking element '//span[normalize-space()='Password']'.</msg>
+<status status="PASS" starttime="20230106 14:12:51.235" endtime="20230106 14:12:51.511"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>${password_txt}</arg>
+<arg>virahidayatt123</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230106 14:12:51.512" level="INFO">Typing password into text field '//input[@name="password"]'.</msg>
+<msg timestamp="20230106 14:12:51.546" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230106 14:12:52.291" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230106 14:12:51.511" endtime="20230106 14:12:52.291"/>
+</kw>
+<status status="PASS" starttime="20230106 14:12:51.234" endtime="20230106 14:12:52.291"/>
+</kw>
+<kw name="And User click terms and conditions" library="register">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${tnc}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230106 14:12:52.291" endtime="20230106 14:12:52.436"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${tnc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230106 14:12:52.437" level="INFO">Clicking element '//*[@id="__next"]/div/div/div/div/div[2]/div/form/div[4]/div/div/label/span/span'.</msg>
+<status status="PASS" starttime="20230106 14:12:52.437" endtime="20230106 14:12:53.863"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230106 14:12:58.866" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230106 14:12:53.865" endtime="20230106 14:12:58.867"/>
+</kw>
+<status status="PASS" starttime="20230106 14:12:52.291" endtime="20230106 14:12:58.867"/>
+</kw>
+<kw name="And User click Daftar button" library="register">
+<kw name="Click Element" library="Selenium2Library">
+<arg>${btn_daftar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230106 14:12:58.869" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230106 14:12:58.868" endtime="20230106 14:12:59.344"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230106 14:13:09.346" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230106 14:12:59.344" endtime="20230106 14:13:09.349"/>
+</kw>
+<status status="PASS" starttime="20230106 14:12:58.868" endtime="20230106 14:13:09.351"/>
+</kw>
+<kw name="Then User should be redirected to verify otp page" library="register">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<arg>${otp_page}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230106 14:13:09.408" level="INFO">Element '//span[@class="sc-dkPtyc iThpYw"]' is displayed.</msg>
+<status status="PASS" starttime="20230106 14:13:09.357" endtime="20230106 14:13:09.409"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230106 14:13:14.412" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230106 14:13:09.409" endtime="20230106 14:13:14.416"/>
+</kw>
+<status status="PASS" starttime="20230106 14:13:09.355" endtime="20230106 14:13:14.417"/>
+</kw>
+<status status="PASS" starttime="20230106 14:12:11.987" endtime="20230106 14:13:14.419"/>
+</test>
+<status status="PASS" starttime="20230106 14:12:11.878" endtime="20230106 14:13:14.429"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Register">Register</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
